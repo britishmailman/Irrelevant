@@ -1,4 +1,3 @@
-
 <!DOCTYPE="html">
 
 
@@ -11,6 +10,7 @@
     <script type="text/javascript">
         function Calculator () {
          a = document.getElementById('inputa').value
+         if (a == "") {document.getElementById("inputa").value = "No Sum Entered"}
          e = a.split(" ")
          b = parseInt(e[0])
          c = parseInt(e[2])
@@ -33,4 +33,6 @@
     <h4><u>Calculator if you need it</u></h4>
     <input id="inputa" type="text">
     <button onclick="Calculator()">Calculate!</button>
+
+    <h1>THIS IS THE INTERNET</h1>
 </body>
