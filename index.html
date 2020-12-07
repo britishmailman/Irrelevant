@@ -6,11 +6,30 @@
 </head>
 
 <body>
+    <script type="text/javascript">
+        function Calculator () {
+         a = document.getElementById('inputa').value
+         e = a.split(" ")
+         b = parseInt(e[0])
+         c = parseInt(e[2])
+         if (e[1] == "+"){d = b + c}
+         else if (e[1] == "*" | e[1] == "x") {d = b * c}
+         else if (e[1] == "/" | e[1] == "÷") {d = b / c}
+         else if (e[1] == "-") {d = b - c }
+         d = d  + ""
+         conf = confirm("The answer to " + a + " is " + d + "!")
+         if (conf == true) {Calculator()}
+        }
+    </script>
+
+
     <h1><u>WEBSITE</u></h1>
     <p>This is a website I have created because I'm bored whilst I am <b>quarantined</b>.<br>Have a good day and look at that image!</p>
 
     <img src="./fireman.png">
 
     <h1><b><u>hey. better have looked at him</u></b></h1>
-
+    <h4><u>Calculator if you need it</u></h4>
+    <input id="inputa" type="text">
+    <button onclick="Calculator()">Submit</button>
 </body>
