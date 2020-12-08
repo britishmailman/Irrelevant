@@ -2,39 +2,13 @@
 
 
 <head>
-	<meta charset="UTF-8">
-	<title>Random Website</title>
+    <meta charset="UTF-8">
+    <title>Random Website</title>
 </head>
 
 <body>
-    <script type="text/javascript">
-        function Calculator () {
-         a = document.getElementById('inputa').value
-         if (a == "") {document.getElementById("inputa").value = "No Sum Entered"}
-         if (a.length == 3) {
-         	b = parseInt(a.split("")[0])
-         	c = parseInt(a.split("")[2])
-         	if (a.split("")[1] == "+") {d = b + c}
-         	else if (a.split("")[1] == "*" | a.split("")[1] == "x") {d = b * c}
-         	else if (a.split("")[1] == "-") {d = b - c}
-         	else if (a.split("")[1] == "/" | a.split("")[1] == "÷") {d = b / c}
-         	d = d + ""
-         	document.getElementById("inputa").value = d}
 
-     
 
-         else if (a.length == 5) {
-     	  	 e = a.split(" ")
-      		 b = parseInt(e[0])
-        	 c = parseInt(e[2])
-  	     	 if (e[1] == "+"){d = b + c}
-   	    	 else if (e[1] == "*" | e[1] == "x") {d = b * c}
-   		   	 else if (e[1] == "/" | e[1] == "÷") {d = b / c}
-     	  	 else if (e[1] == "-") {d = b - c }
-       		 d = d  + ""
-       		 document.getElementById("inputa").value = d}
-        }
-    </script>
 
 
     <h1><u>WEBSITE</u></h1>
@@ -46,10 +20,47 @@
     <h4><u>Calculator if you need it</u></h4>
     <input id="inputa" type="text">
     <button onclick="Calculator()">Calculate!</button>
+    <p id="calc">Answer:</p>
 
     <script type="text/javascript">
-    	lst = inputc
-    	console.log(eval(a.join('+'))/a.length)
+        function Calculator () {
+         a = document.getElementById('inputa').value
+         if (a == "") {document.getElementById("calc") = "No Sum Entered"; console.log("No Sum Entered")}
+         if (a.length == 3) {
+            e = a.split("")}
+         else{
+            e = a.split(" ")}
+         b = parseInt(e[0])
+         c = parseInt(e[2])
+         if (e[1] === "+") {d = b + c}
+         else if (e[1] == "*" | a.split("")[1] == "x") {d = b * c}
+         else if (e[1] == "-") {d = b - c}
+         else if (e[1] == "/" | a.split("")[1] == "÷") {d = b / c}
+         d = d + ""
+         document.getElementById("calc").innerHTML = "Answer: " + d
+        }
+    </script>
+
+    <h4><u>Percentage Calculator!</u></h4>
+    <input id="pinputa" type="text">
+    <button onclick="percentcalc()">Calculate!</button>
+    <p id="percalc">Answer: </p>
+
+    <script type="text/javascript">
+        function percentcalc(){
+            if (document.getElementById("pinputa").value.length == 3) {
+                   d = document.getElementById("pinputa").value.split("/")
+            }
+            else {
+                d = document.getElementById("pinputa").value.split(" / ")
+            }
+            d0 = parseFloat(d[0])
+            d1 = parseFloat(d[1])
+            f = d0 / d1
+            f = f * parseFloat(100)
+            document.getElementById("percalc").innerHTML = "Answer: " + f + "%"
+        }
+    </script>
 
     <h1>THIS IS THE INTERNET</h1>
 </body>
