@@ -17,7 +17,7 @@
     <img src="./fireman.png">
 
     <h1><b><u>hey. better have looked at him</u></b></h1>
-    <h4><u>Calculator if you need it</u></h4>
+    <h4><u>Calculator</u></h4>
     <input id="inputa" type="text">
     <button onclick="Calculator()">Calculate!</button>
     <p id="calc">Answer:</p>
@@ -41,7 +41,7 @@
         }
     </script>
 
-    <h4><u>Percentage Calculator!</u></h4>
+    <h4><u>Percentage Calculator</u></h4>
     <input id="pinputa" type="text">
     <button onclick="percentcalc()">Calculate!</button>
     <p id="percalc">Answer: </p>
@@ -59,6 +59,25 @@
             f = d0 / d1
             f = f * parseFloat(100)
             document.getElementById("percalc").innerHTML = "Answer: " + f + "%"
+        }
+    </script>
+
+    <h4><u>Mean Average Calculator</u></h4>
+    <input id="ainputa" type="text">
+    <button onclick="averagecalc()">Calculate!</button>
+    <p id="avecalc">Answer: </p>
+
+
+    <script type="text/javascript">
+        function averagecalc() {
+            lst = document.getElementById("ainputa").value
+            lst = lst.split(" ")
+            sumoflst = parseFloat(lst.reduce(function(a, b) { return parseInt(a) + parseInt(b); }, 0))
+            mean = parseFloat(sumoflst / lst.length); mean = mean + ""
+            document.getElementById("avecalc").innerHTML = "Answer: " + mean               
+            
+
+            
         }
     </script>
 
